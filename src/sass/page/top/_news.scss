@@ -1,0 +1,151 @@
+/*———————————
+	1.3news
+———————————*/
+
+.news {
+	background: $cr-bg-w;
+
+	&-heading {
+		font-weight: bold;
+		padding-top: 5.7rem;
+		position: relative;
+		text-align: center;
+		@include underline();
+	}
+
+	&-inner {
+		padding-top: 3.8rem;
+		padding-bottom: 3.2rem;
+		margin-top: 6.4rem;
+		width: 838px;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		@include mq("tab") {
+			padding-left: $pd-tab;
+			padding-right: $pd-tab;
+		}
+		@include mq("sp") {
+			padding-left: $pd-sp;
+			padding-right: $pd-sp;
+		}
+	}
+
+	&-outer {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&-wrap {
+		padding: 15.5px 0 18px;
+		border-bottom: 1px solid #707070;
+		width: 100%;
+		display: flex;
+		&:last-child {
+			border-bottom: 0px;
+		}
+		@include mq("tab") {
+			flex-wrap: wrap;
+		}
+	}
+
+	&-date {
+		line-height: 1.625;
+		color: $cr-txt;
+		width: 14%;
+		padding: 2px 0 0 3px;
+		@include font-size(1.6rem, 1.4rem);
+		@include mq("tab") {
+			width: 110px;
+			padding-left: 2.1vw;
+		}
+		@include mq("sp") {
+			width: 100px;
+			padding-left: 2.1vw;
+		}
+	}
+
+	&-label {
+		width: 12%;
+		text-align: center;
+		border-radius: 6px;
+		width: 100px;
+		height: 30px;
+		margin: 0 auto;
+		&:hover {
+			opacity: $opacity;
+		}
+		@include mq("tab") {
+			margin-left: 0;
+		}
+		@include mq("sp") {
+			width: 90px;
+			height: 25px;
+		}
+
+		a {
+			text-decoration: none;
+			color: $cr-bg-w;
+			font-weight: bold;
+			line-height: 30px;
+			@include font-size(1.6rem, 1.4rem);
+			@include mq("sp") {
+				line-height: 25px;
+			}
+		}
+	}
+
+	&-label-gray {
+		background: #666666;
+	}
+
+	&-label-blue {
+		background: $cr-m;
+	}
+
+	&-label-red {
+		background: $cr-a;
+	}
+
+	&-title {
+		width: 74%;
+		padding-left: 30px;
+		&:hover {
+			opacity: $opacity;
+		}
+		@include mq("tab") {
+			width: 100%;
+			padding: 0 2.1vw;
+		}
+
+		a {
+			text-decoration: none;
+			line-height: 1.7;
+			color: $cr-txt;
+		}
+	}
+
+	&-more {
+		padding-top: 13px;
+		text-align: center;
+		&:hover {
+			opacity: $opacity;
+		}
+
+		a {
+			text-decoration: none;
+			color: $cr-a;
+			font-weight: bold;
+			line-height: 1.625;
+			position: relative;
+
+			&::after {
+				content: resolve('news_arrow.svg');
+				position: absolute;
+				top:50%;
+				right: -12px;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}

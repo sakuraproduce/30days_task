@@ -1,0 +1,167 @@
+/*———————————
+	0.header
+———————————*/
+
+.header {
+	position: fixed;
+	width: 100%;
+	@include z-index(header);
+
+	&-inner {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: $header-height;
+		background-color: $cr-m;
+		padding: 0 140px;
+		@include mq("tab") {
+			padding: 0 70px;
+		}
+		@include mq("sp") {
+			display: block;
+			padding: 0px;
+			height: $header-height-sp;
+		}
+	}
+
+	&-wrap {
+		@include mq("sp") {
+			display: flex;
+			justify-content: space-between;
+			padding: 16px;
+		}
+	}
+
+	&-logo {
+		width: 200px;
+		@include mq("sp") {
+			width: 147px;
+			height: 29px;
+			vertical-align: middle;
+			margin: 0;
+		}
+		&:hover {
+			opacity: $opacity;
+		}
+	}
+	&-icon {
+		display: none;
+		z-index: 41;
+		@include mq("sp") {
+			display: block;
+		}
+
+		span {
+			position: relative;
+			display: block;
+			width: 28px;
+			height: 4px;
+			background:#e9eaec;
+			transition: ease .5s;
+			&:nth-child(1){
+				top: 0;
+			}
+			&:nth-child(2){
+				margin: 5px 0;
+			}
+			&:nth-child(3){
+				top: 0;
+			}
+		}
+	}
+
+	&-icon-open {
+		span {
+			&:nth-child(1){
+				top: 9px;
+				transform: rotate(45deg);
+			}
+			&:nth-child(2){
+				transform: translateY(-50%);
+				opacity: 0;
+			}
+			&:nth-child(3) {
+				top: -9px;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&-nav {
+		@include mq("sp") {
+			display: none;
+		}
+	}
+
+	&-list {
+		display: flex;
+		list-style: none;
+	}
+
+	&-item a{
+		display: inline-block;
+		text-decoration: none;
+		color: white;
+		border-bottom: 3px solid transparent; //hover時のがたつきをなくす
+		&:hover {
+			border-bottom: 3px solid $cr-a;
+		}
+	}
+
+	.js-header-item-active {
+		border-bottom: 3px solid $cr-a;
+	}
+
+	&-item + .header-item {
+		margin-left: 30px;
+	}
+
+	&-nav-drawer {
+		position: relative;
+		top: -60px;
+		display: none;
+		transform: translateX(100%);
+		transition: ease .5s;
+		@include z-index(drawer);
+		width: 100%;
+		height: 100vh;
+		background: #3F51B5;
+		opacity: 0.8;
+		@include mq("sp"){
+			display: block;
+		}
+	}
+
+	&-list-drawer {
+		padding: 96px 88px;
+	}
+
+	&-item-drawer {
+		position: relative;
+		color: #FFFFFF;
+		transition:  transform .6s ease, opacity .2s ease;
+		&::after {
+			content: resolve('header_arrow-w.svg');
+			position: absolute;
+			top:0;
+			right: 14.14px;
+			transform: translateY(50%);
+		}
+		&:hover {
+			background:lighten(#3F51B5, 20%);
+		}
+
+		a {
+			text-decoration: none;
+			display: block;
+			padding: 15px 20px;
+		}
+	}
+
+	&-nav-drawer-open {
+		transform: translateX(0);
+		overflow-y: auto;
+	}
+}
+

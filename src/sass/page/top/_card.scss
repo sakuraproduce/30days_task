@@ -1,0 +1,102 @@
+/*———————————
+	1.2card
+———————————*/
+
+.card {
+	background: $cr-bg-g;
+
+	&-heading {
+		font-weight: bold;
+		padding-top: 5.5rem;
+		position: relative;
+		text-align: center;
+		@include underline();
+	}
+
+	&-inner {
+		padding-top: 3.8rem;
+		margin-top: 6.857rem;
+		width: 942px;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.swiper-container {
+		padding-bottom: 78.83px;
+
+		.swiper-pagination-bullets {
+			bottom: 30px;
+		}
+
+		.swiper-pagination-bullet {
+			width: 12px;
+			height: 12px;
+			margin: 0 4px;
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			width: 14.14px;
+			height: 14.14px;
+			top: 93%;
+			@include mq("sp") {
+				top: 92%;
+			}
+		}
+
+		.swiper-button-prev {
+			background: resolve('card_pagenation-left.svg') no-repeat center center / contain;
+			left: 46%;
+			@include mq("tab") {
+				left: 15%;
+			}
+			@include mq("sp") {
+				left: 10%;
+			}
+		}
+
+		.swiper-button-next {
+			background: resolve('card_pagenation-right.svg') no-repeat center center / contain;
+			right: 46%;
+			@include mq("tab") {
+				right: 15%;
+			}
+			@include mq("sp") {
+				right: 10%;
+			}
+		}
+	}
+
+	&-wrap {
+		background: $cr-bg-w;
+		border-radius: 4px;
+		height: auto;
+		padding: 1.6rem;
+		&:hover {
+			opacity: $opacity;
+		}
+
+		img {
+			text-align: center;
+			width: 100%;
+			max-width: 100%;
+			max-height: 100%;
+			margin-bottom: 2.2rem;
+		}
+	}
+
+	&-title {
+		font-weight: bold;
+		padding-bottom: 2rem;
+		line-height: 1.2;
+	}
+
+	&-text {
+		font-weight: bold;
+		line-height: 1.5;
+		@include font-size(1.6rem, 1.4rem);
+	}
+}
+
+

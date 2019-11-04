@@ -1,0 +1,95 @@
+/*———————————
+	1.5access
+———————————*/
+
+.access {
+	background: $cr-bg-w;
+
+	&-heading {
+		font-weight: bold;
+		padding-top: 5.7rem;
+		position: relative;
+		text-align: center;
+		@include underline();
+	}
+
+	&-inner {
+		padding-top: 6.8rem;
+		padding-bottom: 8.7rem;
+		margin-top: 6.4rem;
+		width: 800px;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include mq("tab") {
+			padding-left: $pd-tab;
+			padding-right: $pd-tab;
+		}
+		@include mq("sp") {
+			padding-left: $pd-sp;
+			padding-right: $pd-sp;
+		}
+	}
+
+	&-iframe {
+		@include rwd-iframe(800, 400);
+	}
+
+	&-wrap {
+		margin: 37px 0 26px;
+	}
+
+	&-def {
+		display: flex;
+	}
+
+	&-dtitle {
+		color: $cr-txt;
+		line-height: 1.625;
+		width: 19.75%;
+		padding-left: 40px;
+		padding-bottom: 10px;
+		@include font-size(1.6rem, 1.4rem);
+		@include mq("sp") {
+			width: 40%;
+		}
+	}
+
+	&-data {
+		color: $cr-txt;
+		line-height: 1.625;
+		width: 80.25%;
+		padding-left: 0;
+		padding-bottom: 10px;
+		@include font-size(1.6rem, 1.4rem);
+		@include mq("sp") {
+			width: 60%;
+		}
+	}
+
+	&-btn {
+		text-align: center;
+
+		a {
+			@include btn(305px, 12px, 12px, 2rem);
+			font-weight: bold;
+			box-shadow: 0px 3px 6px #000029;
+			position: relative;
+			@include font-size(2rem, 1.6rem);
+			@include mq("sp") {
+				width: 60%;
+			}
+			&::after {
+				content: resolve('access_arrow.svg');
+				position: absolute;
+				top:57%;
+				right: 14.14px;
+				transform: translateY(-50%);
+				@include mq("sp") {
+					right: 3.25%;
+				}
+			}
+		}
+	}
+}

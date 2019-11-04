@@ -1,0 +1,154 @@
+/*———————————
+	1.6q&a
+———————————*/
+
+.qa {
+	background: #e7ebf4;
+
+	.qa-heading {
+		font-weight: bold;
+		padding-top: 5.5rem;
+		position: relative;
+		text-align: center;
+		@include underline();
+	}
+
+	.qa-inner {
+		padding-top: 3.8rem;
+		margin-top: 6.857rem;
+		padding-bottom: 7.6rem;
+		width: 904px;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include mq("tab") {
+			padding-left: $pd-tab;
+			padding-right: $pd-tab;
+		}
+		@include mq("sp") {
+			padding-left: $pd-sp;
+			padding-right: $pd-sp;
+		}
+	}
+
+	.qa-item {
+		margin-bottom: 28px;
+		position: relative;
+	}
+
+	.qa-title {
+		width: 100%;
+		background: #3F51B5;
+		color: #FFFFFF;
+		font-size: 1.8rem;
+		position: relative;
+		padding: 16px 38.5px 16px 55px;
+		@include font-size(1.8rem, 1.6rem);
+		&::before {
+			content: 'Q';
+			position: absolute;
+			top: 16px;
+			left: 22px;
+			font-weight: bold;
+		}
+	}
+
+	.qa-icon {
+		position: absolute;
+		top: 20px;
+		right: 18.5px;
+		&::before {
+			content: resolve('qa_plus.svg');
+		}
+	}
+
+	.qa-icon-minus {
+		position: absolute;
+		top: 14px;
+		right: 18.5px;
+		&::before {
+			content: resolve('qa_minus.svg');
+		}
+	}
+
+	.qa-answer {
+		display: none;
+		width: 100%;
+		border: 1px solid #3F51B5;
+		color: #3F51B5;;
+		background: #FFFFFF;
+		position: relative;
+		padding: 31px 27px 30px 55px;
+		@include font-size(1.8rem, 1.4rem);
+		&::before {
+			content: 'A';
+			position: absolute;
+			top: 31px;
+			left: 22px;
+			font-weight: bold;
+		}
+	}
+
+	.qa-answer-active {
+		display: block;
+	}
+
+	.qa-list-2col {
+		display: flex;
+		justify-content: space-between;
+		margin: 100px 0;
+		@include mq("sp") {
+			flex-direction: column;
+		}
+	}
+
+	.qa-item-2col {
+		position: relative;
+		width: 49%;
+		@include mq("sp") {
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+
+	.qa-title-2col {
+		border: 1px solid #3F51B5;
+		border-radius: 30px;
+		padding: 15px 0;
+		text-align: center;
+		background: #FFFFFF;
+		color: #3F51B5;
+		margin-bottom: 40px;
+		@include font-size(1.8rem, 1.6rem);
+		@include mq("sp") {
+			margin-bottom: 20px;
+			padding: 10px 0;
+		}
+	}
+
+	.qa-icon-2col {
+		position: absolute;
+		top: 19px;
+		right: 24px;
+		&::before {
+			content: resolve('qa_arrow-bottom.svg');
+		}
+	}
+
+	.qa-icon-2col-top {
+		position: absolute;
+		top: 17px;
+		right: 24px;
+		&::before {
+			content: resolve('qa_arrow-top.svg');
+		}
+	}
+
+	.qa-answer-2col {
+		padding: 0 28px 18px;
+		margin-bottom: 20px;
+		color: #3F51B5;
+		display: none;
+	}
+}
